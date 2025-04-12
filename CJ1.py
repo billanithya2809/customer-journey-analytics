@@ -1,3 +1,6 @@
+import sys
+print("Python version:", sys.version)
+print("Starting app initialization...")
 import pandas as pd
 import numpy as np
 import dash
@@ -11,14 +14,18 @@ from datetime import datetime
 from io import StringIO
 
 # Initialize Dash app with a modern theme
+# Initialize the Dash app with a modern theme
 app = dash.Dash(
-    __name__,
+    __name__, 
     meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
     external_stylesheets=[
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css'
     ]
 )
 app.title = "Customer Journey Analytics"
+
+# Add this line - this exposes the server variable that gunicorn needs
+server = app.server
 
 # Define color scheme for consistency
 colors = {
@@ -999,5 +1006,8 @@ def update_heatmap_chart(json_data):
     return fig
 
 # Run the server
+# Run the server
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+    # For local development
+    app.run_server(debug=False)
+    # The server variable is used by gunicorn in production
