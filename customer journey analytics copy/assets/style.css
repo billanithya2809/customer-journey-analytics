@@ -1,0 +1,67 @@
+body {
+    background-color: #f4f7f9;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #222;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.Select-control {
+    background-color: #ffffff !important;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+#stage-filter {
+    margin-bottom: 20px;
+}
+
+.Graph {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.dash-graph {
+    padding: 10px;
+}
+
+.dcc-graph svg {
+    background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
